@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="nasukopixel.png" width="131" height="29">
+  <SubTexture name="idle0001" x="0" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+
+  <SubTexture name="confirm0001" x="0" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+  <SubTexture name="confirm0002" x="30" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+  <SubTexture name="confirm0003" x="60" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+  <SubTexture name="confirm0004" x="90" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+
+  <SubTexture name="confirm-hold0001" x="90" y="0"  width="30" height="30" frameX="0" frameY="0" frameWidth="30" frameHeight="30"/>
+</TextureAtlas>

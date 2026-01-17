@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "name": "nasuko_damage",
+  "author": "aoi_nasuko",
+  "fallback": "funkin",
+  "assets": {
+    "note": {
+      "assetPath": "notes/nasuko_damage",
+      "scale": 0.9,
+      "data": {
+        "left":  { "prefix": "damage" },
+        "down":  { "prefix": "damage" },
+        "up":    { "prefix": "damage" },
+        "right": { "prefix": "damage" }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+import funkin.modding.module.Module;
+import funkin.modding.events.HitNoteScriptEvent;
+import funkin.modding.events.UpdateScriptEvent;
+import funkin.play.notes.notekind.NoteKind;
+import funkin.play.PlayState;
+import funkin.data.song.SongNoteDataRaw;
+import funkin.play.notes.Strumline;
+import funkin.Conductor;
+import flixel.FlxG;
+import funkin.data.notestyle.NoteStyleRegistry;
+
+// 打つと1拍後に打たないといけないノーツを生成するナスノーツ
+class Nasuko_EggplantNotes extends Module
+{
+  public function new() { super("Nasuko_EggplantNotes"); }
+
+  public static inline var KIND:String = "nasuko_eggplant";
+  public static inline var STYLE:String = "nasuko_eggplant";
+
+  override function onNoteIncoming(event:NoteScriptEvent):Void
+  {
+    if (event.note.noteData.kind != KIND) return;
+
+    var styleEntry = NoteStyleRegistry.instance.fetchEntry(STYLE);
+
+    event.note.setupNoteGraphic(styleEntry);
+  }
+
+  override function onNoteHit(event:HitNoteScriptEvent):Void
+  {
+    if (event.note.noteData.kind != KIND) return;
+
+    FlxG.sound.play(Paths.sound("nasuko_eat"), 1.0);
+
+    if (PlayState.instance != null) {
+
+      var styleEntry = NoteStyleRegistry.instance.fetchEntry(Nasuko_EggplantEatenNotes.STYLE);
+
+      if (event.note.noteData.getMustHitNote()) {
+        var sl:Strumline = PlayState.instance.playerStrumline;
+        var conductor = PlayState.instance.playerStrumline.conductorInUse;
+        var bpm:Float = conductor.bpm;
+        var beatMs:Float = (60.0 / bpm) * 1000.0;
+        var baseTime:Float = event.note.noteData.time;
+        var spawnTime:Float = baseTime + beatMs;
+
+        var nd = new SongNoteDataRaw(spawnTime, event.note.noteData.getDirection(), 0, "nasuko_eggplant_eaten");
+        var notes = sl.buildNoteSprite(nd);
+        notes.setupNoteGraphic(styleEntry);
+      } else {
+        var ol:Strumline = PlayState.instance.opponentStrumline;
+        var conductor = PlayState.instance.opponentStrumline.conductorInUse;
+        var bpm:Float = conductor.bpm;
+        var beatMs:Float = (60.0 / bpm) * 1000.0;
+        var baseTime:Float = event.note.noteData.time;
+        var spawnTime:Float = baseTime + beatMs;
+
+        var nd = new SongNoteDataRaw(spawnTime, event.note.noteData.getDirection() + 4, 0, "nasuko_eggplant_eaten");
+        var notes = ol.buildNoteSprite(nd);
+        notes.setupNoteGraphic(styleEntry);
+      }
+    }
+  }
+
+}

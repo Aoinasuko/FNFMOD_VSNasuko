@@ -1,0 +1,67 @@
+import funkin.modding.module.Module;
+import funkin.modding.events.HitNoteScriptEvent;
+import funkin.modding.events.UpdateScriptEvent;
+import funkin.play.notes.notekind.NoteKind;
+import funkin.play.PlayState;
+import funkin.play.notes.Strumline;
+import funkin.Conductor;
+import flixel.FlxG;
+import funkin.data.notestyle.NoteStyleRegistry;
+
+// ナスノーツ(食べかけ)
+class Nasuko_EggplantEatenNotes extends Module
+{
+  public function new() { super("Nasuko_EggplantEatenNotes"); }
+
+  public static inline var KIND:String = "nasuko_eggplant_eaten";
+  public static inline var STYLE:String = "nasuko_eggplant_eaten";
+
+  override function onUpdate(e:UpdateScriptEvent)
+  {
+    var ps = PlayState.instance;
+    if (ps == null) return;
+
+    var sl:Strumline = ps.playerStrumline;
+    if (sl == null) return;
+
+    var ol:Strumline = ps.opponentStrumline;
+    if (ol == null) return;
+
+    for (note in sl.notes)
+    {
+      if (note.noteData.kind != KIND) continue;
+
+      var receptor:StrumlineNote = sl.getByIndex(note.noteData.getDirection());
+
+      if (receptor == null) continue;
+
+      var tx = receptor.x + (receptor.width  - note.width ) * 0.5;
+      var ty = receptor.y + (receptor.height - note.height) * 0.5;
+      note.setPosition(tx, ty);
+    }
+
+    for (note in ol.notes)
+    {
+      if (note.noteData.kind != KIND) continue;
+
+      var receptor:StrumlineNote = ol.getByIndex(note.noteData.getDirection());
+
+      if (receptor == null) continue;
+
+      var tx = receptor.x + (receptor.width  - note.width ) * 0.5;
+      var ty = receptor.y + (receptor.height - note.height) * 0.5;
+      note.setPosition(tx, ty);
+    }
+
+  }
+
+  override function onNoteHit(event:HitNoteScriptEvent):Void
+  {
+    if (event.note.noteData.kind != KIND) return;
+
+    FlxG.sound.play(Paths.sound("nasuko_eat"), 1.0);
+
+    event.note.visible = false;
+  }
+
+}

@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "name": "Nasuko",
+
+  "renderType": "sparrow",
+  "assetPath": "characters/nasuko",
+
+  "startingAnimation": "idle",
+  "singTime": 8.0,
+
+  "scale": 1.0,
+  "flipX": false,
+  "isPixel": false,
+
+  "offsets": [0, -90],
+  "cameraOffsets": [0, 0],
+
+  "healthIcon": {
+    "id": "Nasuko",
+    "scale": 1.0,
+    "flipX": false,
+    "isPixel": false,
+    "offsets": [0, 0]
+  },
+
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "Nasuko Idle",
+      "frameRate": 12,
+      "looped": true,
+      "frameIndices": [0, 1, 2, 3],
+      "offsets": [0, 0]
+    },
+
+    {
+      "name": "singRIGHT",
+      "prefix": "Nasuko Sing RIGHT Start",
+      "frameRate": 24,
+      "looped": false,
+      "frameIndices": [0, 1, 2],
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT-hold",
+      "prefix": "Nasuko Sing RIGHT Hold",
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [0, 1],
+      "offsets": [0, 0]
+    },
+
+    {
+      "name": "singLEFT",
+      "prefix": "Nasuko Sing LEFT Start",
+      "frameRate": 24,
+      "looped": false,
+      "frameIndices": [0, 1, 2],
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT-hold",
+      "prefix": "Nasuko Sing LEFT Hold",
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [0, 1],
+      "offsets": [0, 0]
+    },
+
+    {
+      "name": "singDOWN",
+      "prefix": "Nasuko Sing DOWN Start",
+      "frameRate": 24,
+      "looped": false,
+      "frameIndices": [0, 1, 2],
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN-hold",
+      "prefix": "Nasuko Sing DOWN Hold",
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [0, 1],
+      "offsets": [0, 0]
+    },
+
+    {
+      "name": "singUP",
+      "prefix": "Nasuko Sing UP Start",
+      "frameRate": 24,
+      "looped": false,
+      "frameIndices": [0, 1, 2],
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP-hold",
+      "prefix": "Nasuko Sing UP Hold",
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [0, 1],
+      "offsets": [0, 0]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "name": "nasuko_eggplant_eaten",
+  "author": "aoi_nasuko",
+  "fallback": "funkin",
+  "assets": {
+    "note": {
+      "assetPath": "notes/nasuko_eggplant_eaten",
+      "scale": 0.9,
+      "data": {
+        "left":  { "prefix": "eggplant_eaten" },
+        "down":  { "prefix": "eggplant_eaten" },
+        "up":    { "prefix": "eggplant_eaten" },
+        "right": { "prefix": "eggplant_eaten" }
+      }
+    }
+  }
+}

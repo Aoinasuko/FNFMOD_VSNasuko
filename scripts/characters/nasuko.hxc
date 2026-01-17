@@ -1,0 +1,21 @@
+import funkin.play.character.SparrowCharacter;
+import funkin.play.character.CharacterType;
+import funkin.play.PlayState;
+
+class NasukoCharacter extends SparrowCharacter
+{
+  function new()
+  {
+    super('nasuko');
+  }
+
+  var time = 0.0;
+
+  override function update(elapsed:Float):Void
+  {
+    super.update(elapsed);
+    time += elapsed;
+    this.setPosition(this.x, this.originalPosition.y + Math.sin(time * 2.0) * 26);
+  }
+
+}

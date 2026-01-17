@@ -1,0 +1,9 @@
+{
+  "title": "VSNasuko",
+  "description": "Nasuko is back! It's a rap battle with Nasuu and the fairy who cries!",
+  "api_version": "0.8.0",
+  "mod_version": "0.1.0",
+  "contributors": [
+    { "name": "aoi_nasuko", "role": "Developer, Music, Sprite" }
+  ]
+}

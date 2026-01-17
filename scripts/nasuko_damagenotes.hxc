@@ -1,0 +1,62 @@
+import funkin.modding.module.Module;
+import funkin.modding.events.NoteScriptEvent;
+import funkin.modding.events.HitNoteScriptEvent;
+import funkin.play.PlayState;
+import funkin.data.notestyle.NoteStyleRegistry;
+import funkin.Highscore;
+import flixel.FlxG;
+
+// 打つとダメージを受けるノーツ
+class Nasuko_DamageNotes extends Module
+{
+  public function new() { super("Nasuko_DamageNotes"); }
+
+  public static var DAMAGE:Float = 0.25;
+
+  public static inline var KIND:String = "nasuko_damage";
+  public static inline var STYLE:String = "nasuko_damage";
+
+  override function onNoteIncoming(event:NoteScriptEvent):Void
+  {
+    if (event.note.noteData.kind != KIND) return;
+
+    var styleEntry = NoteStyleRegistry.instance.fetchEntry(STYLE);
+
+    event.note.setupNoteGraphic(styleEntry);
+  }
+
+  override function onNoteHit(event:HitNoteScriptEvent):Void
+  {
+    if (event.note.noteData.kind != KIND) return;
+
+    if (!event.note.noteData.getMustHitNote()) {
+      event.note.visible = false;
+      event.cancel();
+      return;
+    }
+
+    FlxG.sound.play(Paths.sound("nasuko_damage"), 1.0);
+
+    if (PlayState.instance != null) {
+      PlayState.instance.health = Math.max(0, PlayState.instance.health - DAMAGE);
+      Highscore.tallies.combo = 0;
+      PlayState.instance.songScore = PlayState.instance.songScore - 1000;
+
+      event.note.visible = false;
+    }
+
+    event.cancel();
+  }
+
+  override function onNoteMiss(event:HitNoteScriptEvent):Void
+  {
+    if (!event.note.noteData.getMustHitNote()) return;
+
+    if (event.note.noteData.kind != KIND) return;
+
+    event.note.visible = false;
+
+    event.cancel();
+  }
+
+}

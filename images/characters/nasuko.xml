@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Nasuko.png">
+
+  <!-- =========================
+       Row 1: Idle (y = 0)
+       ========================= -->
+  <SubTexture name="Nasuko Idle 0" x="0"   y="0" width="300" height="400"/>
+  <SubTexture name="Nasuko Idle 1" x="300" y="0" width="300" height="400"/>
+  <SubTexture name="Nasuko Idle 2" x="600" y="0" width="300" height="400"/>
+  <SubTexture name="Nasuko Idle 3" x="900" y="0" width="300" height="400"/>
+
+  <!-- =========================
+       Row 2: RIGHT (y = 400)
+       Start: frames 1-3 => 0,1,2
+       Hold : frames 3-4 => 2,3
+       ========================= -->
+  <SubTexture name="Nasuko Sing RIGHT Start 0" x="0"   y="400" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing RIGHT Start 1" x="300" y="400" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing RIGHT Start 2" x="600" y="400" width="300" height="400"/>
+
+  <SubTexture name="Nasuko Sing RIGHT Hold 0"  x="600" y="400" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing RIGHT Hold 1"  x="900" y="400" width="300" height="400"/>
+
+  <!-- =========================
+       Row 3: LEFT (y = 800)
+       ========================= -->
+  <SubTexture name="Nasuko Sing LEFT Start 0" x="0"   y="800" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing LEFT Start 1" x="300" y="800" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing LEFT Start 2" x="600" y="800" width="300" height="400"/>
+
+  <SubTexture name="Nasuko Sing LEFT Hold 0"  x="600" y="800" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing LEFT Hold 1"  x="900" y="800" width="300" height="400"/>
+
+  <!-- =========================
+       Row 4: DOWN (y = 1200)
+       ========================= -->
+  <SubTexture name="Nasuko Sing DOWN Start 0" x="0"   y="1200" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing DOWN Start 1" x="300" y="1200" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing DOWN Start 2" x="600" y="1200" width="300" height="400"/>
+
+  <SubTexture name="Nasuko Sing DOWN Hold 0"  x="600" y="1200" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing DOWN Hold 1"  x="900" y="1200" width="300" height="400"/>
+
+  <!-- =========================
+       Row 5: UP (y = 1600)
+       ========================= -->
+  <SubTexture name="Nasuko Sing UP Start 0" x="0"   y="1600" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing UP Start 1" x="300" y="1600" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing UP Start 2" x="600" y="1600" width="300" height="400"/>
+
+  <SubTexture name="Nasuko Sing UP Hold 0"  x="600" y="1600" width="300" height="400"/>
+  <SubTexture name="Nasuko Sing UP Hold 1"  x="900" y="1600" width="300" height="400"/>
+
+</TextureAtlas>

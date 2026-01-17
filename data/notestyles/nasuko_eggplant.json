@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "name": "nasuko_eggplant",
+  "author": "aoi_nasuko",
+  "fallback": "funkin",
+  "assets": {
+    "note": {
+      "assetPath": "notes/nasuko_eggplant",
+      "scale": 0.9,
+      "data": {
+        "left":  { "prefix": "eggplant" },
+        "down":  { "prefix": "eggplant" },
+        "up":    { "prefix": "eggplant" },
+        "right": { "prefix": "eggplant" }
+      }
+    }
+  }
+}
